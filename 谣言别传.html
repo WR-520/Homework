@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS文件夹/reset.css">
+    <link rel="stylesheet" href="boo/css/bootstrap.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="shortcut icon" href="图片/bitbug_favicon (3).ico"> 
+    <link rel="stylesheet" href="CSS文件夹/模块化开发.css">
+    <script src = "疫情主题页面脚本/jquery.min.js"></script>
+    <link rel="stylesheet" href="CSS文件夹/谣言别传.css">
+    <script src = "疫情主题页面脚本/导航栏.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>谣言别传</title>
+</head>
+<body>
+    <div class="tangle"><a href="javascript:;">回到顶部</a></div>
+    <div class="share" id="share"><!--分享-->
+        <img scr="图片/Facebook.png" alt=""> 
+        <img src="图片/tuite1.png" alt="">
+        <img src="图片/instagram.png" alt="">
+       
+        <span>
+            分享到
+        </span> 
+    </div>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <header class="container"><!--头部-->
+            <div class="naver">  
+                <div class="container-fluid">
+               <ul id="naver">
+                 <!-------------下拉菜单盒子--------------->
+             <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn">
+                    <a href="抗疫首页.html">首页
+                        <i class="fa fa-angle-down x"></i>
+                    </a>
+               
+                    <!------------下拉菜单内容---------->
+                    <ul class="dropdown-content">
+                        <li><a href="国内疫情.html">国内疫情</a></li>
+                        <li><a href="海外疫情.html">海外疫情</a></li>
+                    </ul>
+                </li>
+             </div>
+              
+             <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn"><a href="防疫知识.html" >防疫知识
+                    <i class="fa fa-angle-down x"></i>
+                </a>
+                   <ul class="dropdown-content">
+                        <li><a href="热门问答.html">热门问答</a></li>
+                        <li><a href="谣言别传.html" class = "active">谣言别传</a></li>
+                        <li><a href="战疫解药.html">战疫解药</a></li>
+                   </ul>
+                </li>
+             </div>
+
+            <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn"><a href="战疫英雄.html">战疫英雄<i class="fa fa-angle-down x"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="英雄风貌.html">
+                            英雄风貌
+                        </a></li>
+                    </ul>
+                </li>
+            </div>  
+
+             <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn"><a href="战疫生活.html">战疫生活<i class="fa fa-angle-down x"></i></a>
+                   <ul class="dropdown-content">
+                       <li>
+                           <a href="市民生活.html">市民生活</a>
+                       </li>
+                   </ul>
+                </li>  
+             </div>
+
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4"><a href="个人感想.html">个人感想</a></li>
+       
+            <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn"><a href="更多.html" >更多<i class="fa fa-angle-down x"></i></a>
+                   <ul class="dropdown-content">
+                       <li>
+                           <a href="消灭病毒小游戏.html" >消灭病毒小游戏</a>
+                       </li>
+                       <li>
+                        <a href="贪吃蛇小游戏.html">贪吃蛇小游戏</a>
+                      </li>
+                      <li>
+                        <a href="购物车.html">购物车</a>
+                     </li>
+                   </ul>
+                </li>
+            </div>
+
+               </ul>
+                </div>
+            </div> 
+        </header>
+        </nav>
+
+     <div class="container">
+       <div class="row">
+           <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+                <div class="box">
+                    <img src="图片/鸡屎藤.jpg" alt="" class="img-box">
+                <p>鸡屎藤能预防新冠病毒，是真的吗？</p>
+                <a href="javascript:;">了解详情</a>
+                </div>
+           </div>
+           
+           <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+                <div class="box">
+                    <img src="图片/牛黄丸.jpg" alt="" class="img-box">
+                    <p>安宫牛黄丸可预防新冠肺炎吗？</p>
+                    <a href="javascript:;">了解详情</a>
+                </div>
+           </div>
+           
+           <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+                <div class="box">
+                    <img src="图片/苦木注射液.png" alt="" class="img-box">
+                     <p>苦木注射液是否对新冠肺炎的治疗有效？</p>
+                     <a href="javascript:;">了解详情</a>
+                </div>
+           </div>
+           
+           <div class="col-lg-3 col-md-3 col-xs-6 col-sm-6">
+            <div class="box">
+                <img src="图片/新冠病毒.png" alt="" class="img-box">
+                <p>新冠肺炎会像艾滋、乙肝一样，不可能被彻底消灭，长期寄生体内？</p>
+                <a href="javascript:;">了解详情</a>
+            </div>
+       </div>
+       </div>
+       <div class="row box-content">
+        鸡屎藤又名鸡矢藤，是一种常见的中药药材，因为这种植物有类似鸡屎的臭味而得名。在传统医学典籍中，鸡屎藤的功能被描述为祛风活血、止痛解毒、消食导滞、除湿消肿。但目前并无实验明确证实这些功效。
+
+        <br>目前也没有任何已公开的实验证据证实鸡屎藤对包含新冠病毒在内的冠状病毒有抑制作用。因此，认为鸡屎藤能预防新冠肺炎毫无依据。而且《有毒中草药彩色图鉴》认为，鸡屎藤的全草是有毒性的。大家千万不要勿信谣言自行服用。 
+       </div>
+       
+       <div class="row box-content">
+        安宫牛黄丸不能预防新冠肺炎，该药属于急救药品，用于热闭证。该药不是《新型冠状病毒肺炎诊疗方案（试行第六版）》推荐的治疗新冠肺炎的药物，切记不可滥用。
+
+        <br>该药清热解毒，镇惊开窍。用于热病，邪入心包，高热惊厥，神昏谵语；中风昏迷及脑炎、脑膜炎、中毒性脑病、脑出血、败血症见上述证候者。
+       </div>
+
+       <div class="row box-content">
+        苦木注射液属于中成药，有清热解毒消炎的功效，对治疗新冠肺炎是没有作用的。这种药物主要是适用于感冒，上呼吸道感染，急性扁桃腺炎的治疗。
+        <br>目前没有针对新冠病毒的药物，主要是隔离治疗，对症支持治疗为主。建议不要乱用药物，避免影响身体的健康，还起不到治疗的作用。
+       </div>
+       <div class="row box-content">
+        目前没有任何证据表明，新型冠状病毒会长时间在身体里面潜伏，从理论上来说，这种可能性是非常非常小的。
+       <br> 3 月 14 日，中国医学科学院医学实验动物研究所、北京协和医学院、首都医科大学附属北京安贞医院的研究团队在预印本平台 bioRxiv 在线发表了他们的最新研究，题目为：Reinfection could not occur in SARS-CoV-2 infected rhesus macaques，翻译成中文为恒河猴感染新冠病毒，康复之后，不会再次感染。
+       </div>   
+     </div>
+     <footer><!--我从这里复制的--->
+        <div class="container">
+        <dl class="col-lg-3 col-xs-4">
+           <dt>联系我</dt>
+           <dd><img src="图片/qq.png" alt="">1016002920</dd>
+           <dd><img src="图片/locate.png" alt="">广东省四会市观海路</dd>
+           <dd><img src="图片/email.png" alt="">1016002920@qq.com</dd>
+           <dd><i class="fa fa-comments-o" ></i>r1016002920</dd>
+        </dl>
+        <dl class="col-lg-3 col-xs-2">
+            <dt>关于</dt>
+            <dd>主题引入</dd>
+            <dd>防疫知识</dd>
+            <dd>战疫英雄</dd>
+            <dd>战疫生活</dd>
+            <dd>个人感想</dd>
+        </dl>
+        <dl class="col-lg-3 col-xs-2">
+             <dt>使用技术</dt>
+             <dd>HTML、HTML5</dd>
+             <dd>CSS、CSS3</dd>
+             <dd>Javascript</dd>
+             <dd>bootstrap</dd>
+        </dl>
+         <dl class="col-lg-3 col-xs-4">
+             <dt>更多</dt>
+             <dd>工作时间：</dd>
+             <dd>周一到周五晚</dd>
+             <dd>周日全天</dd>
+             <dd class="img"><img src="图片/公众号.jpg" alt=""></dd>
+             <span>官方公众号 获取更多资讯</span>
+         </dl>
+      </div>
+      <hr>
+      <p class="copyright"><i class="fa fa-copyright">2020 201908764301吴蕊 版权所有</i></p>
+      <a href="" class="totop">刷新页面</a>
+    </footer>
+
+
+</body>
+
+<script>
+     var BoxContent=document.querySelectorAll('.box-content');
+     var btn=document.querySelectorAll('.box a');
+     console.log(BoxContent.length);
+     for(let i=0;i<btn.length;i++){
+        btn[i].addEventListener('click',function(){
+             for(let j=0;j<btn.length;j++){
+                BoxContent[j].style.display='none';
+             }  
+             BoxContent[i].style.display='block';  
+        })
+     }
+
+</script>
+</html>

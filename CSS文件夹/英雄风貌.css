@@ -1,0 +1,43 @@
+body{
+    background: #eee;
+}
+.photo{
+    width: 300px;
+    height: 200px;
+    position: relative;
+    margin: 300px auto;
+}
+.photo img{
+    width: 300px;
+    height: 200px;
+    position:absolute;;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+.photo:hover img{
+    z-index: 1;
+}
+.photo:hover img:nth-child(1){
+    transform:translate(0,-215px);
+}
+.photo:hover img:nth-child(2){
+    transform:translate(-315px,0);
+}
+.photo:hover img:nth-child(3){
+    transform:translate(0,215px);
+}
+.photo:hover img:nth-child(4){
+    transform:translate(315px,0);
+}
+.photo:hover img:nth-child(5){
+    transform:translate(-315px,-215px);
+}
+.photo:hover img:nth-child(6){
+    transform:translate(-315px,215px);
+}
+.photo:hover img:nth-child(7){
+    transform:translate(315px,-215px);
+}
+.photo:hover img:nth-child(8){
+    transform:translate(315px,215px);
+}

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="boo/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS文件夹/reset.css">
+    <link rel="shortcut icon" href="图片/bitbug_favicon (3).ico">
+    <title>购物车</title>
+</head> 
+    <style>
+        body{
+          background-color:rgb(248, 245, 240);
+        }
+       .box{
+          display:flex;
+          -webkit-display:flex;
+          justify-content:flex-start;
+       }  
+       #category-bar,#category-bar1{
+          line-height:20px;
+         display:flex;
+         -webkit-display:flex;
+         line-height:20px;
+       }
+  
+       #category-bar{
+         width:60%;
+         justify-content:space-evenly;
+       }
+       #category-bar1{
+         width:30%;
+         justify-content:flex-end;
+       }
+
+
+       #category-bar li{
+          text-align:center; 
+          font-size:16px;
+          
+       }
+       #category-bar li span,.cg-item,.Sum{
+          color:cornflowerblue;
+           font-weight: bold;
+       }
+       .Sum{
+          padding-right:10px;
+       }
+       .table-list{
+         display:flex;
+         -webkit-display:flex;
+       }
+       .table{
+         display:flex;
+         width:60%;
+         justify-content: space-around;
+       }
+       .table div{
+         margin-left:-6%;
+       }
+       .table1{
+         display:flex;
+         -webkit-display:flex;
+         width:32%;
+         justify-content:space-around;
+       }
+       .table1 div{
+         display:flex;
+         -webkit-display:flex;
+       }
+       #ReversePrice{
+         margin-left:-120px;
+       }
+       .shuliang{
+         margin-left:-100px;
+       }
+      
+       .goods-list .store-display{
+         font: 14px tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+       }
+       .pic img{
+         display:inline-block;
+         width:200px;
+         height:100px;
+         vertical-align:top;
+       }
+       .oldprice{
+         text-decoration:line-through;
+       }
+       .price,.operate{
+         display:flex;
+         -webkit-display:flex;
+         flex-direction: column;
+       }
+
+    </style>
+<body>
+  
+    <div class="box">
+        <ul id = "category-bar">
+        </ul>
+        <ul id = "category-bar1">
+          <li>已选商品（不含运费）</li>
+          <button>结算</button>
+        </ul>
+    </div>
+    <div class="table-list">
+    <div class="table">
+              <div><input type = "checkbox" class="CheckAll1" >全选</div>
+              <div>商品信息</div>        
+    </div>
+    <div class="table1">
+             <div ><input type = "checkbox" id="ReversePrice">按价格升序排序</div>
+              <div class="shuliang" >数量</div>
+              <div class="jine">金额</div>
+              <div class="oper">操作</div>
+    </div>
+  </div>
+  <!-- 商品列表 -->
+   <div class="goods-list row">
+   </div>  
+
+   <div class="container">
+     <div class="col-lg-2">
+      <input type="checkbox" class="CheckAll1">全选
+    </div>
+      已选商品<span>5</span>件
+      合计（不含运费）:<span class="Sum" ></span>
+      <button>结算</button>
+   </div>
+
+</body>
+</html>
+<script>
+
+    let CategoryItem =[
+     { 
+       name:'全部商品',
+       number:5
+     },
+     {
+       name:'降价商品',
+       number:0
+     },
+     {
+       name:'库存紧张',
+       number:0
+     }
+     ];
+    
+    //分栏bar
+    let CategoryBar = document.querySelector('#category-bar');
+
+    for( let i = 0; i < CategoryItem.length; i++ ){
+      //创建li
+      let li = document.createElement('li');
+       
+      //分栏名
+      li.innerHTML = CategoryItem[i].name;
+      CategoryBar.appendChild(li);
+       
+      //数目span
+      let span = document.createElement('span');
+      
+      span.innerText = CategoryItem[i].number; 
+      li.appendChild(span);
+    }
+    
+    let CategoryBar1 = document.querySelector('#category-bar1');
+    let span = document.createElement('span');
+     span.innerText = '0.00';
+
+    
+    //插入元素:sum 总金额
+    CategoryBar1.insertBefore(span,CategoryBar1.children[1]);
+    span.className = 'Sum';
+
+    //仿数据
+    let data = [
+      {
+        store:'天喵超市',
+        detail:'可孚医用口罩50只一次性医疗口罩医生用三层医护防飞沫独立包装',
+        oldprice:101,
+        price: 90,
+        img:'图片/购物车/口罩.png',
+        check:false,
+        number: 2
+      },
+      {
+        store:'天喵超市',
+        detail:'滴露进口消毒液1L*2瓶官方旗舰店家用杀菌衣物室内消毒水洗衣宠物原装进口 99.999%*有效杀菌',
+        oldprice:141,
+        price: 119,
+        img:'图片/购物车/消毒液.png',
+        check:false,
+        number:1
+      },
+      {
+        store:'天喵超市',
+        detail:'欧洁75度酒精消毒液皮肤伤口杀菌家用物品表面手机清洁500ml*1瓶75%酒精，买3瓶送1瓶，展示价格为单瓶价格',
+        oldprice:20,
+        price:14,
+        img:'图片/购物车/酒精.png',
+        check:false,
+        number:1
+      },
+      { 
+         store:'蓝月亮官方旗舰店',
+         detail:'蓝月亮抑菌洗手液除菌芦荟滋润500gX6瓶补充装家用官方旗舰店正品',
+         oldprice:65.4,
+         price:59.7,
+         img:'图片/购物车/蓝月亮.png',
+         check:false,
+         number:1      
+      },
+      { 
+        store:'三鑫家具专营店',
+        detail:'防晒太阳伞双层紫外线公主蕾丝花边遮阳黑胶洋伞雨伞折叠晴雨两用',
+        oldprice:70,
+        price:59.99,
+        img:'图片/购物车/雨伞.png',
+        check:false,
+        number:1
+      }
+    ]
+    
+ 
+    let list = document.querySelector('.goods-list');
+    let totalPrice = document.querySelectorAll('.Sum');
+    
+   
+
+    let flag = true;
+    //全选 总金额
+    function totalprice(){ 
+      if(flag){
+       for( let i = 0; i < totalPrice.length ; i++){
+        s = 0; 
+       data.forEach(value => {
+         if( value.check === true){
+         s += value.price*value.number;
+         }
+       })
+       totalPrice[i].innerHTML = s.toFixed(2);
+     }
+     
+    }
+     
+    else if(!flag){
+      totalPrice[0].innerHTML = "0.00";
+      totalPrice[1].innerHTML = "0.00";
+    }
+    flag = !flag;
+    }
+    
+    
+    //总金额
+   
+    
+    // 数据渲染
+    function render(data){
+      //TotalPrice单个商品的总金额
+      let str = ""; 
+      var TotalPrice = 0;
+      data.forEach(value => {
+        //每款商品总价
+        let PerTotalPrice = value.price*value.number;
+        
+        //如果被选。合计TotalPrice
+        if( value.check === true){
+        TotalPrice += PerTotalPrice;
+        }
+
+        str +=`
+          <div class="container">
+          <div class="store-display"><input type="checkbox" class="check1" >店铺:${value.store}</div>
+          <div class="pic col-lg-3"><img src = ${value.img} ></div>
+          <div class="col-lg-4" ><a>${value.detail}</a></div>
+          <div class="price col-lg-1">
+            <span class="oldprice">￥${value.oldprice}</span>
+            <span>￥${value.price}</span>
+          </div>
+          <div class="number col-lg-2">
+          <button class="reduce">-</button> 
+          <input type="text" value=${value.number} class="num" style="width:30px" >
+          <button class="add">+</button>
+          </div>
+          <div class="Tosum col-lg-1" >
+            ${(PerTotalPrice).toFixed(2)}
+          </div>
+          <div class="operate col-lg-1">
+          <a>移入收藏夹</a>
+          <a>删除</a>
+          </div>
+          </div>
+        `
+      })  
+    
+      // totalprice(TotalPrice);
+      list.innerHTML = str;
+     
+    }
+    render(data);
+    
+ 
+
+    let checkAll1 = document.querySelectorAll('.CheckAll1');
+    //console.log(checkAll1);
+    for(let i = 0; i < checkAll1.length ; i++){
+      console.log('-------')
+      checkAll1[i].addEventListener( 'click', function() {
+           check1.forEach((value) =>{
+              value.checked = checkAll1[i].checked; 
+        })
+
+        data.forEach( (value) => {
+          console.log('你好');
+          value.check = checkAll1[i].checked;
+        })
+        totalprice();
+      })
+      
+    }
+    
+    
+
+
+      const reverse = document.querySelector('#ReversePrice');
+      
+      // 排序
+      reverse.addEventListener('click',()=>{
+        data.sort(sortRule);
+        render(data);
+      })
+      //排序规则
+      function sortRule(a,b){
+        return a.price - b.price;
+      }
+
+    const add = document.querySelectorAll('.add');
+    const reduce = document.querySelectorAll('.reduce');
+    let check1 = document.querySelectorAll('.check1');
+
+    //给'+'， '-' check1 元素添加自定义属性
+    function Set(){
+      for(let i = 0; i < add.length ; i++){
+        add[i].setAttribute('number',i);
+        reduce[i].setAttribute('number',i);
+        check1[i].setAttribute('number',i);
+      }
+    }
+    Set();
+      
+      let Tosum = document.querySelectorAll('.Tosum');
+      let num = document.querySelectorAll('.num');
+      let body = document.querySelector('body');
+      body.addEventListener('click',function(ev){
+      var ev = ev || window.event;
+      var target = ev.target || ev.srcElement;
+       
+      // 处理add和reduce
+      if( target.nodeName.toLocaleLowerCase() === 'button' ){
+        let index = Number(target.getAttribute('number'));
+         switch(target.className){
+          case 'add':
+          data[index].number++;
+          num[index].value++;
+          Tosum[index].innerText = 
+          (data[index].number*data[index].price).toFixed(2);
+          break;
+
+          case 'reduce':
+          data[index].number--;
+          num[index].value--;
+          Tosum[index].innerText =
+          (data[index].number*data[index].price).toFixed(2);
+          break;
+      }
+          totalprice(); 
+     }
+      
+      //选择，改变data里对应item的check属性值
+      if(target.nodeName.toLocaleLowerCase() === 'input' && target.className ==='check1'){
+        data[ Number(target.getAttribute('number'))].check = target.checked;
+        totalprice();
+      }
+      
+    })
+  
+
+</script>  

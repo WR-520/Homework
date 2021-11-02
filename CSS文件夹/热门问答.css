@@ -1,0 +1,155 @@
+
+body{ 
+    position:relative;
+}
+*{ 
+
+    list-style:none;
+}
+.list{
+    font-size:20px;
+    line-height:40px;
+    text-align:center;
+    position:relative;
+    font-family:'宋体';
+}
+
+.list li .mask{
+    position:absolute;
+    z-index:-1; 
+    left:0;
+    top:0; 
+    height:40px;
+    width:5px;
+     content:'';
+
+}
+
+.first,.second,.third,.fouth,.fifth,.sixth{
+  position:relative; 
+  font-family:'宋体';
+}
+
+.list-group{
+    position: absolute;
+    font-weight:200;
+}
+li{
+    position: relative;
+}
+.first {
+   background-color:#c2e9fb!important;
+   
+}
+.second {
+   background-color:#add8ec!important;
+}
+.third {
+    background-color:#92d3f3!important;
+}
+.forth{
+   background-color:#9bb5ee!important;
+}
+.fifth{
+    background-color:#7f9fe4!important;
+}
+.sixth{
+    background-color:#7a7cf0!important;
+}
+
+.one::before{
+    content: '';
+    display: block;
+    width: 10px;
+    height: 43px;
+    left: 0;
+    background-color: #c2e9fb;
+    z-index:1;
+    position: absolute;
+
+}
+.two::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 43px;
+    left: 0;
+    background-color: #add8ec;
+    z-index: 999;
+}
+.three::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 43px;
+    left: 0;
+    background-color: #92d3f3;
+    z-index: 999;
+}
+
+.four::before{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 43px;
+    left: 0;
+    background-color: #9bb5ee;
+    z-index: 999;
+}
+.five::before{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 43px;
+    left: 0;
+    background-color: #7f9fe4;
+    z-index: 999;
+}
+.six::before{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 43px;
+    left: 0;
+    background-color: #7a7cf0;
+    z-index: 9999;
+}
+
+.list li {
+   transition:all 5s;
+}
+.scroll-exam{
+    height: 600px;
+    overflow-y: scroll;
+    position: relative;
+}
+.arti p{
+    text-indent:2em;
+    font-size:18px;
+    line-height:40px; 
+    color:rgb(70, 67, 67);
+    font-family:'宋体';
+}
+.arti .q{
+    font-size:24px;
+    color:rgb(104, 139, 196);
+    text-align:center;
+    font-weight:400;
+}
+.qe{
+    position:absolute;
+    top:400px;
+    left:100px;
+    z-index:-1;
+}
+.biaoti{
+    font-size:40px;
+    font-weight:800;
+    padding:20px!important;
+    text-align:center;
+}

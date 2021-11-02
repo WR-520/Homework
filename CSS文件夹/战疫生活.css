@@ -1,0 +1,20 @@
+.content{
+    margin-top:60px;
+}
+.article p, article p{
+    font-size:16px;
+    text-indent:2em;
+    line-height:46px;
+    animation:jump 2s;
+}
+@media screen and (max-width:1500px)
+{  .content{
+    margin-top:70px;}
+}
+
+@media screen and (max-width:760px){
+
+    .content{
+        margin-top:100px;
+    }
+}

@@ -1,0 +1,346 @@
+
+body{
+    background-color: rgb(248, 245, 240)!important;
+}
+*{
+    box-sizing:border-box;
+}
+/*歌单*/
+.photo{
+    width: 320px;
+    height: 350px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
+    background-blend-mode: multiply,multiply;
+    margin:160px auto;
+    font-style: "微软雅黑 Light";
+    color:white;
+    border-radius: 5px;
+    box-shadow: 0 0 7px #ead5ee;
+    overflow: hidden;
+}
+/*歌名*/
+.title{
+    margin-top: 5px;
+    height: 70px;
+    font-size: 32px;
+    text-align: center;
+    line-height: 70px;
+}
+/*歌手*/
+.singer{
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+}
+/*用div做的播放按钮*/
+.play{
+    width: 152px;
+    height: 163px;
+    background-image: url("index.png");/*按钮图 用background-image*/
+    background-repeat: no-repeat;
+    margin:20px auto;
+}
+
+/*可见歌词盒子*/
+.lrc{
+    width: 100%;
+    height: 220px;
+    margin: 50px auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+form{
+    margin-top:400px;
+}
+input{
+    float:left;
+    margin-left:20px;
+    height:30px;
+    border:none;
+}
+.text{
+    width:190px;
+}
+.text:focus{
+   outline-color: #3498db;
+   
+ background-blend-mode: multiply,multiply;
+}
+.submit{
+    color:white;
+    border:0;
+    
+   background-color: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
+   background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
+   background-blend-mode: multiply,multiply;
+}
+
+.submit:hover{
+    color:black;
+    background-color: #DCD9D4; 
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%); 
+    background-blend-mode: soft-light,screen;
+}
+/*歌词*/
+.content{
+    position: relative;
+}
+/*按钮旋转*/
+.play.rotate{
+    -webkit-animation: rot 5s linear infinite;
+    animation: rot 5s linear infinite;
+}
+.lrc p{
+    line-height: 20px;
+    font-size: 15px;
+}
+
+.middle{
+    position:absolute;
+    top:25%;
+    right:18%;
+}
+.middle1{
+    position:absolute;
+    top:41%;
+    right:18%;
+}
+
+.middle2{
+    position:absolute;
+    top:57%;
+    right:18%;
+}
+.btn{
+    position:relative;
+    display:inline-block;
+    width:90px;
+    height:90px;
+    background-color:white;
+    border-radius:50%!important;
+    box-shadow:0 5px 15px -5px #00000070;
+    color:#00000095;
+    overflow:hidden;
+    transition:0.2s linear;
+}
+.btn:hover i{
+    color:black;
+    transform:scale(1.2);
+}
+.btn i{
+    line-height:80px;
+}
+
+.btn::before{
+   content:"";
+   position:absolute;
+   width:120%;
+   height:120%;
+   left:-110%;
+   top:90%;
+   background:#3498db;
+  transform:rotate(45deg);
+}
+
+.btn:hover::before{
+    
+    animation:change 0.7s;
+    top:-10%;
+    left:-10%;
+}
+
+@keyframes change{
+   0%{left:-110%;
+      top:90%;
+   }
+   50%{
+      left:10%;
+      top:-30%;
+  }
+  100%{
+     top:-10%;
+     left:-10%;
+  }
+}
+
+/*按钮旋转动画*/
+@keyframes rot{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.flower{
+    position:relative;
+    height:200px;
+    top:20px;
+    transform:rotate(-45deg);
+    left:34px;
+}
+.petal{
+    position:absolute;
+    width: 100px;
+    height: 100px;
+    border-radius:300px 0;/*左右 上下 四个值：左上 右上 右下 左下*/
+    opacity:0.6;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
+    transform-origin:0 100px;
+    -moz-transform-origin: 0 100px;/*旋转基本点x-axis y-axis */
+}
+.div1{
+    animation:a1 10s ease 2s infinite alternate;/*ease 先快后慢 延迟两秒播放 循环播放*/
+}
+
+.div2{
+    animation:a2 10s ease 2s infinite alternate;
+}
+.div3{
+    animation:a3 10s ease 2s infinite  alternate;
+}
+.div4{
+    animation:a4 10s ease 2s infinite alternate;
+}
+
+.div5{
+    animation:a5 10s ease 2s infinite alternate;
+}
+.div6{
+    animation:a6 10s ease 2s infinite alternate;
+}
+.div7{
+    animation:a7 10s ease 2s infinite alternate;
+}
+.div8{
+    animation:a8 10s ease 2s infinite alternate;
+}
+.div9{
+    animation:a9 10s ease 2s infinite alternate;
+}
+@keyframes a1{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(-45deg);
+    }
+}
+
+@keyframes a2{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(-35deg);
+    }
+}
+@keyframes a3{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(-25deg);
+    }
+}
+@keyframes a4{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(-15deg);
+    }
+}
+@keyframes a5{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(0);
+    }
+}
+@keyframes a6{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(15deg);
+    }
+}
+@keyframes a7{
+    form{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(25deg);
+    }
+}
+@keyframes a8{
+    from{
+        transform:rotate(0deg);
+    }
+        to{
+            transform:rotate(35deg);
+        }
+}
+@keyframes a9{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(45deg);
+    }
+}
+
+.welcome{
+    
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:60px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.welcome span{
+    color:rgba(0,0,0,0.6);
+    font-weight: 900;
+    float:left;
+    margin-right:4px!important;
+    
+}
+@keyframes p{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:0.7;
+    }
+}
+
+.index1{
+    animation:p 1.2s ease-in;
+}
+.index2{
+    animation:p 1.4s ease-in;
+}
+.index3{
+    animation:p 1.6s ease-in;
+}
+.index4{
+    animation:p 1.8s ease-in;
+}
+.index5{
+    animation:p 2.0s ease-in;
+}
+.index6{
+    animation:p 2.2s ease-in;
+}
+.index7{
+    animation:p 2.4s ease-in;
+}
+.index8{
+    animation:p 2.6s ease-in;
+}

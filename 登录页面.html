@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="CSS文件夹/reset.css">
+    <link rel="stylesheet" href="CSS文件夹/Index.css">
+    <link rel="stylesheet" href="boo/css/bootstrap.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="shortcut icon" href="图片/bitbug_favicon (3).ico">
+     <style>
+         .boxx{
+             position:absolute;
+             display:none;
+             transform-style:preserve-3d;
+         }
+         .heart{
+             color:rgba(0, 0, 0, 0.89);
+             animation:a1 1s ease-in-out alternate;
+         }
+         @keyframes a1{
+            0%{
+                opacity:0;
+            }
+           50%{
+               opacity:0.4;
+           }
+           100%{
+               opacity:0.5;
+           }
+
+         }
+        
+     </style>
+</head>
+   
+<body>
+    <!--歌词-->
+    <div class="container">
+        <div class="row">
+             <div class="col-lg-5">
+
+    <!-- 架子 -->
+    <article class="photo"><!--整个歌单-->
+        <div class="title">平凡天使</div><!--歌名-->
+        <div class="singer">邓紫棋</div><!--歌手-->
+        <div class="play">
+            <img src="图片/index.png" alt="">
+        </div><!--播放按钮图-->
+        <div class="lrc"><!--可见歌词盒子-->
+            <div class="content">
+            </div><!--完整歌词-->
+        </div>
+    </article>
+    <audio id="myMusic" src="视频和音乐/平凡天使.mp3"><!--音乐-->
+    </audio>
+   </div>
+   
+    <div class="col-lg-7 flower">
+        <div class="div1 petal"></div>
+        <div class="div2 petal"></div>
+        <div class="div3 petal"></div>
+        <div class="div4 petal"></div>
+        <div class="div5 petal"></div>
+        <div class="div6 petal"></div>
+        <div class="div7 petal"></div>
+        <div class="div8 petal"></div>
+        <div class="div9 petal"></div>
+    </div>
+    <form action="抗疫首页.html">
+            <div>
+            <input class="text" type="text" name="express">
+            <input class="submit"type="submit" value="进入首页">
+           </div>
+    </form>
+  </div>
+</div>
+    <div class="middle">
+        <a href="" class="btn">
+        <i class="fa fa-facebook" aria-hidden="true" style="font-size:34px"></i>
+       </a>
+   </div>
+    <div class="middle1">
+        <a href="" class="btn">
+        <i class="fa fa-twitter" aria-hidden="true" style="font-size:34px;text-align:center"></i>
+       </a>
+   </div>
+    <div class="middle2">
+        <a href="" class="btn">
+        <i class="fa fa-instagram" aria-hidden="true" style="font-size:34px;text-align:center"></i>
+        </a>
+    </div>
+    <span class="boxx">
+      <i class="fa fa-heart heart" style="font-size:24px"></i>
+    </span>
+
+    <div class="welcome">
+    <span class="index1">W</span>
+    <span class="index2">e</span>
+    <span class="index3">l</span>
+    <span class="index4">c</span>
+    <span class="index5">o</span>
+    <span class="index6">m</span>
+    <span class="index7">e</span>
+    <span class="index8">!</span>
+    </div>
+</body>
+<script src = "疫情主题页面脚本/Index.js"></script>
+</html>

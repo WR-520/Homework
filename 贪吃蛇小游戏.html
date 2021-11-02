@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src= "疫情主题页面脚本/jquery.min.js"></script>
+    <link  rel="shortcut icon" href="./图片/bitbug_favicon (3).ico">
+    <title>贪吃蛇小游戏</title>
+   <style>
+     .rule{
+       position:absolute;
+       right:130px;
+       top:200px;
+       text-align:center;
+     }
+   </style>
+</head>
+<body>
+  <div class="map">
+  </div>
+  <div class="rule">
+       <h2>游戏规则</h2>
+       <div>
+        <h3> 按键盘'↑/↓/←/→'开始游戏。</h3>
+        <h3>吃一个大颗粒+2分，吃一个小颗粒+1分。</h3> 
+        <h3> 长按加速蛇身蠕动。</h3>
+        <h3> 撞到围墙结束游戏。</h3>
+        
+       </div>
+  </div>
+</body>
+   <script>  
+       var size; 
+       var score = 0;   
+       var map = $('.map');
+       $(body).append(map);
+       $('.map').css({
+          "width":"800px",
+          "height":"600px",
+          "border":"10px solid black",
+          "border-radius":"1%",
+          "position":"relative",
+          "overflow":"hidden",
+          "box-sizing":"content-box"
+       })
+       //food的构造函数
+      function Creat_Food(){
+        size = Random(1,2);
+        this.width = 20*size;//20是最小规则食物的宽度/高度
+        this.height = 20*size;
+        this.color = 'blue';
+      }
+     //food的出现函数
+     Creat_Food.prototype.display = function(x,y){
+        //先删除被吃掉的食物div
+        //出现新的食物div
+        $('.food').remove();
+        var $Food = $('<div class="food"></div>'); 
+        $('.map').prepend($Food);
+        $Food.css({
+          "background-color":this.color,
+          "width":this.width,
+          "height":this.height,
+          "position":"absolute",
+          "left":x*20 + 'px',
+          "top":y*20 + 'px'
+         }
+        ) 
+     }
+     
+    //随机数函数 用于食物坐标
+    function Random(min,max){
+      switch(arguments.length){
+          case 1: parseInt(Math.random()*min+1,10); break;
+          case 2: return parseInt(Math.random()*(max-min + 1) + min,10); break; 
+          default: return 0;break; 
+      }
+    }
+    //body设为全局变量
+    var body;
+     //蛇的构造函数
+     function Snake(){
+       this.body = [
+            {x:3,y:0,color:"red"},
+            {x:2,y:0,color:"black"},
+            {x:1,y:0,color:"black"}];
+            this.width = 20;
+            this.height = 20;
+            body =this.body;
+        }
+
+     
+     //画出蛇身
+      Snake.prototype.display=function(){
+        for(let i = 0 ; i < this.body.length ; i++){
+           let current = this.body[i];//每一节蛇身的属性
+           var $Snank_part = $('<div class="snake_body"></div>');//蛇身部分div
+           $('.map').prepend($Snank_part);
+           $Snank_part.css({
+            "width":this.width,
+            "height":this.height,
+            "position":"absolute",
+            "left":(current.x)*this.width + 'px',
+            "top":(current.y)*this.height + 'px',
+            "background-color":current.color,
+            "box-shadow": "0 0 15px 1px black"
+           })
+       }
+      }
+      //清空蛇
+      function RemoveSnake(){
+        $("div").remove(".snake_body");
+      }
+
+      //蛇身坐标改变
+      function changePos(that){
+        var i = that.body.length - 1;
+            for( ; i > 0 ; i--){
+                that.body[i].x = that.body[i-1].x;
+                that.body[i].y = that.body[i-1].y;
+            }
+      }
+      function walkleft(that){
+        var timer = setInterval(() => {//按下之后蛇一直蠕动 加定时器
+            changePos(that);//改变蛇身坐标
+            that.body[0].x -= 1;//向左走 蛇头x坐标-1
+            RemoveSnake();//清除原来的蛇
+            that.display();;//用新的属性重新渲染蛇
+            head_x = that.body[0].x*that.width;//蛇头x坐标 用以判断是否撞墙或者是否咬自己
+            head_y = that.body[0].y*that.width;//蛇头y坐标 同理
+            Judge(0, that,timer);//判断游戏是否继续
+        
+        },200);
+        //按下 清空此时的定时器
+        $(document).keydown(function(e){
+                e = e||window.event;
+                if(e.keyCode != 37)
+                clearInterval(timer);
+                return;
+            })
+      }
+      function walkright(that){
+        var timer1 = setInterval(() => {
+            changePos(that);
+            that.body[0].x += 1;
+            RemoveSnake();
+            that.display();
+            head_x = that.body[0].x*that.width;
+             head_y = that.body[0].y*that.width;
+             Judge(1, that, timer1);
+           
+        },200);
+
+        $(document).keydown(function(e){
+
+                e = e||window.event;
+                if(e.keyCode != 39)
+                clearInterval(timer1);
+            })
+            return;
+      }
+      function walkup(that){
+        var timer2 = setInterval(() => {
+            changePos(that);
+            that.body[0].y -= 1;
+            RemoveSnake();
+            that.display()
+            head_x = that.body[0].x*that.width;
+            head_y = that.body[0].y*that.width;
+
+            Judge(2, that, timer2);
+           
+        },200);
+        
+        $(document).keydown(function(e){
+                e = e||window.event;
+                if(e.keyCode != 38)
+                clearInterval(timer2);
+                return;
+            })
+
+      }
+      function walkdown(that){
+        var timer3 = setInterval(() => {
+            changePos(that);
+            that.body[0].y += 1;
+            RemoveSnake();
+            that.display()
+            head_x = that.body[0].x*that.width;
+             head_y = that.body[0].y*that.width;
+             Judge(3, that, timer3);
+        },200);
+
+        $(document).keydown(function(e){
+                e = e||window.event;
+                if(e.keyCode != 40)
+                clearInterval(timer3);
+                return;
+            })
+        
+      }
+      //碰到身体
+      function touch_body(sig, that){
+        const base = that.body[0]
+        let flag = false
+        if(sig == 0){
+          for(let i=1; i<that.body.length; i++){
+            if(base["x"]-1 == this.body[i]["x"] && base["y"] == this.body[i]["y"]){
+              flag = true;
+              break;
+            }      
+          }
+        }
+        else if(sig == 1){
+          for(let i=1; i<that.body.length; i++){
+            if(base["x"]+1 == this.body[i]["x"] && base["y"] == this.body[i]["y"]){
+              flag = true;
+              break;
+            }      
+          }
+        }
+        else if(sig == 2){
+          for(let i=1; i<that.body.length; i++){
+            if(base["x"] == this.body[i]["x"] && base["y"] == this.body[i]["y"] ){
+              flag = true;
+              break;
+            }      
+          }
+        }
+        else if(sig == 3){
+          for(let i=1; i<that.body.length; i++){
+            if(base["x"] == this.body[i]["x"] && base["y"] == this.body[i]["y"] ){
+              flag = true;
+              break;
+            }      
+          }
+        }
+        
+        return flag
+      }
+    //蛇头坐标设为全局变量
+    var head_x,head_y;
+
+    //蛇的蠕动函数
+    Snake.prototype.move = function(){
+        var that = this;//this指向构造函数调用者Snake 
+        $(document).keydown(function(e){
+            e = e||window.event;
+            switch(e.keyCode){
+                case 37:walkleft(that);break;
+                case 38:walkup(that);break;
+                case 39:walkright(that);break;
+                case 40:walkdown(that);break;
+            }
+            })  
+    }      
+
+   //食物
+    
+    
+    var Create_Food = new Creat_Food();
+    var food_x = Random(0,38);
+    var food_y = Random(0,28);
+    Create_Food.display(food_x,food_y);
+    Judge();
+     var Snake = new Snake();
+     Snake.display();
+     Snake.move();//一个move()足够 监听全局键盘事件
+    
+
+    function Judge(){
+         //撞墙 游戏结束
+          if(head_x >= $('.map').width()||head_x <= -20||head_y >= $('.map').height()||head_y <= -20)
+          { //停止蠕动
+            clearInterval(arguments[2]);
+            alert('游戏结束，'+ '本次获得' + score + '得分，' + '请重新游戏');
+          }
+        
+
+         //吃到食物 身长加一节 增加新食物
+        else if( (head_x == food_x*20) && (head_y == food_y*20) 
+        ||(size == 2)&&( head_x == (food_x+1)*20||head_x ==food_x*20 )&&( head_y ==(food_y+1)*20|| head_y==food_y*20)
+        )
+        { 
+          score = size==1?score+1:score+4;
+         //重新渲染食物
+         Create_Food = new Creat_Food();
+         food_x = Random(0,38);
+         food_y = Random(0,28);
+         Create_Food.display(food_x,food_y);
+            
+          //复制原来的最后一节蛇身段
+          var snake_tail = body[body.length - 1];
+          
+          //往蛇身数组最后一个增加
+          for(var i = 0 ; (size == 1 && i < size) || (size == 2 && i< size*2 ) ; i++ )
+          body.push({
+              x:snake_tail.x,
+              y:snake_tail.y,
+              color:snake_tail.color
+          })
+          body = body;
+        Snake.display();//body数组更改后 重新渲染蛇
+        }
+        else if(arguments[1]){
+          if(touch_body(arguments[0], arguments[1])){
+            clearTimeout(arguments[2]);
+              alert("碰到身体,游戏结束")
+          }
+        }
+    }
+
+   </script>
+</html>

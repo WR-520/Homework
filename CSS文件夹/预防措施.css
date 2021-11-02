@@ -1,0 +1,51 @@
+@keyframes jump1{
+    0%{
+        transform:translateX(1000px);
+    }
+    50%{
+        color:white;
+    }
+    100%{
+        color:white;
+    }
+  }
+.number{
+  margin-top:60px;
+border-bottom:1.5px solid black;
+}
+.number  b{
+    font-size:36px;
+}
+.number span{
+    display:block;
+    text-align:center;
+    
+}
+.about{
+    font-size:18px;
+}
+
+.mainly article{
+    color:white;
+    font-size:20px;
+    padding:0 10%!important;
+    line-height:40px;
+    background-color:rgba(0,0,0,0.86);
+    box-shadow:3px 2px 30px white!important;
+    animation:jump1 3s forwards;
+    animation-delay: 1.5s;
+}
+
+.mainly img{
+    height:300px;
+}
+
+.margin1{
+    margin-top:0;
+}
+.datanum::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+

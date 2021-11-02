@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS文件夹/reset.css">
+    <link rel="stylesheet" href="boo/css/bootstrap.css">
+    <link rel="stylesheet" href="CSS文件夹/模块化开发.css"> 
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="shortcut icon" href="图片/bitbug_favicon (3).ico">
+    <link rel="stylesheet" href="CSS文件夹/战疫解药.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "疫情主题页面脚本/jquery.min.js"></script>
+    <script src = "疫情主题页面脚本/导航栏.js"></script>
+    <title>战疫解药</title>
+</head>
+<body>
+    <div id="top"></div>
+    <div class="share" id="share"><!--分享-->
+        <img src="图片/Facebook.png" alt=""> 
+        <img src="图片/tuite1.png" alt="">
+        <img src="图片/instagram.png" alt="">
+        <span>
+            分享到
+        </span> 
+    </div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <header class="container"><!--头部-->
+            <div class="naver">  
+                <div class="container-fluid">
+               <ul id="naver">
+                 <!-------------下拉菜单盒子--------------->
+             <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn">
+                    <a href="抗疫首页.html">首页
+                        <i class="fa fa-angle-down x"></i>
+                    </a>
+               
+                    <!------------下拉菜单内容---------->
+                    <ul class="dropdown-content">
+                        <li><a href="国内疫情.html">国内疫情</a></li>
+                        <li><a href="海外疫情.html">海外疫情</a></li>
+                    </ul>
+                </li>
+             </div>
+              
+             <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn"><a href="防疫知识.html"class = "active" >防疫知识
+                    <i class="fa fa-angle-down x"></i>
+                </a>
+                   <ul class="dropdown-content">
+                        <li><a href="热门问答.html">热门问答</a></li>
+                        <li><a href="谣言别传.html">谣言别传</a></li>
+                        <li><a href="战疫解药.html" class = "active">战疫解药</a></li>
+                   </ul>
+                </li>
+             </div>
+
+            <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn"><a href="战疫英雄.html">战疫英雄<i class="fa fa-angle-down x"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="英雄风貌.html">
+                            英雄风貌
+                        </a></li>
+                    </ul>
+                </li>
+            </div>  
+
+             <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn"><a href="战疫生活.html">战疫生活<i class="fa fa-angle-down x"></i></a>
+                   <ul class="dropdown-content">
+                       <li>
+                           <a href="市民生活.html">市民生活</a>
+                       </li>
+                   </ul>
+                </li>  
+             </div>
+
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4"><a href="个人感想.html">个人感想</a></li>
+       
+            <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn"><a href="更多.html" >更多<i class="fa fa-angle-down x"></i></a>
+                   <ul class="dropdown-content">
+                       <li>
+                           <a href="消灭病毒小游戏.html" >消灭病毒小游戏</a>
+                       </li>
+                       <li>
+                        <a href="贪吃蛇小游戏.html">贪吃蛇小游戏</a>
+                      </li>
+                      <li>
+                        <a href="购物车.html">购物车</a>
+                     </li>
+                   </ul>
+                </li>
+            </div>
+
+               </ul>
+                </div>
+            </div> 
+        </header>
+        </nav>
+
+           <!---容器--->
+        <div class="container">
+            <div class="row introduce">
+               <div class="pills col-lg-4">
+                   <img src="图片/试剂1.jpg" alt="">
+                   <div class="mask">
+                   </div> 
+                   <p class="head"> 我国已经有三个疫苗获批进入临床试验</p>
+                   <span class="search"><i class="fa fa-search"></i></span>
+                   <span class="link"><i class="fa fa-link"></i></span>      
+               </div>
+               <div class="pills col-lg-4">
+                <img src="图片/试剂2.jpg" alt="">
+                <div class="mask">
+                </div>
+                <p class="head">号外！我国新冠病毒灭活疫苗获批进入临床试验</p>
+                <span class="search searcher"><i class="fa fa-search"></i></span>
+                <span class="link"><i class="fa fa-link"></i></span>      
+              </div>
+              <div class="pills col-lg-4">
+                 <img src="图片/试剂3.jpg" alt="">
+                 <div class="mask"></div> 
+                 <p class="head">新冠疫苗临床实验者：一切安好，就是长胖了</p>
+                 <span class="search"><i class="fa fa-search"></i></span>
+                 <span class="link"><i class="fa fa-link"></i></span>      
+                </div>      
+            </div>
+           
+            <!---第一篇文章---->
+            <div class="row">
+                <div class="number">1</div> 
+                <div class="col-lg-12 news">
+                      
+                    新京报快讯（记者 应悦）国务院联防联控机制4月13日举行发布会，科技部社会发展科技司司长吴远彬介绍，目前我国已有3个疫苗获批进入临床试验。
+
+                    其中陈薇院士团队的腺病毒载体疫苗首个获批进入临床研究，已于3月底完成了一期的临床试验，并于4月9日开始招募二期临床试验志愿者，是全球首个启动二期临床研究的新冠疫苗品种。
+
+                    4月12日，国家药监局批准了中国生物武汉生物制品研究所和中国科学院武汉病毒研究所联合申请的新冠病毒灭活疫苗，也进入了临床试验。
+                </div>
+           </div> 
+           <!---第二篇文章-->
+            <div class="row">
+                <div class="number">2</div>
+                <div class="col-lg-12 news">
+                   
+                    记者14日从国务院联防联控机制科研攻关组获悉，我国两款新冠病毒灭活疫苗获得国家药品监督管理局一二期合并的临床试验许可，相关临床试验同步启动。这是首批获得临床研究批件的新冠病毒灭活疫苗。
+这两款新冠病毒灭活疫苗分别由国药集团中国生物武汉生物制品研究所、北京科兴中维生物技术有限公司联合有关科研机构开发而成。
+疫苗对疫情防控至关重要。疫情发生以来，国务院联防联控机制科研攻关组专门设立疫苗研发专班，按照灭活疫苗、重组蛋白疫苗、腺病毒载体疫苗、减毒流感病毒载体活疫苗、核酸疫苗5条技术路线共布局12项研发任务，目前均在稳步推进。
+此前，军事科学院军事医学研究院腺病毒载体疫苗已获批开展临床试验。
+此次获批进入临床试验的灭活疫苗，是一种杀死病原微生物但仍保持其免疫原性的疫苗，具有生产工艺成熟、质量标准可控、保护范围广等优点，可用于大规模接种，并且有国际通行标准来判断疫苗的安全性和有效性。
+我国的灭活疫苗有较好研究基础，甲肝灭活疫苗、流感灭活（裂解）疫苗、手足口病灭活疫苗、脊髓灰质炎灭活疫苗等均已广泛应用。
+据了解，上述获得临床试验许可的企业具备大规模灭活疫苗生产能力，根据国家相关法律法规，已为紧急使用做好准备。
+            </div>
+           </div>
+        <!---第三篇文章--->
+           <div class="row">
+            <div class="number">3</div>
+            <div class="col-lg-12 news">
+                4月3日，新冠疫苗临床试验志愿者任超结束14天隔离观察回家。CT结果显示，他双肺纹理清晰，一切正常。
+
+
+
+                中国重组新冠疫苗于3月16日获批启动临床试验，共招募志愿者108名，分为低、中、高三个剂量疫苗组，每组36人，年龄在18至60周岁。
+                
+                
+                
+                按照要求，志愿者接种后需在指定地点隔离观察14天。<div class="news">从3月31日起，陆续有志愿者结束隔离回家。
+                
+                
+                
+                任超告诉记者，隔离期间一人一间房，生活自由安排。一日三餐由工作人员送至门口，伙食每天不重样，份量很足。每个志愿者腋下贴有电子体温计，24小时监测体温，每天要在接种日记卡上记录身体状况、体温变化等。
+                
+                
+                
+            </div>
+             <div class="news">从3月20日接种中剂量疫苗至隔离结束，任超体温始终处于正常范围，未出现不适症状，“唯一变化是吃太好，长胖了。”
+                
+                
+                
+                “成为疫苗志愿者是我的荣幸。”任超每天在微博上分享隔离生活，初衷是想留个见证，没想到获得众多网友关心和鼓励。
+                
+                
+                
+                得知任超是马拉松爱好者，一家马拉松训练营为他寄来专业跑鞋、衣服及祝福卡片，众多跑友录制视频为他加油鼓劲，让他非常感动。
+                
+                
+                
+                随着隔离结束，任超将开启上班模式。“以后好好生活，好好工作。”他说。
+                </div>
+                
+                <div class="news">
+                “80后”靳官萍是首个接种的女性，于3月31日结束隔离回家。“身体状况非常好，活力满满。”她受访时说，整个隔离观察期除接种部位出现微红、发痒外，无其他不良反应。
+                </div>
+                
+                
+                <div class="news">回想这14天，靳官萍感慨“像做了一场梦”。在药企工作的她一直期盼新冠疫苗能够尽早上市，得知疫苗招募临床试验志愿者，她第一时间报名。这段时间，她与其他志愿者结下深厚友谊，离开时“特别舍不得”。
+                
+                
+                
+                回家并不意味着试验结束。靳官萍透露，后续6个月要定期配合专家组抽血检查抗体。随访期间，若有吃药、就医、住院、接种其他疫苗等情况，需在日记卡上予以记录。
+                
+                
+                
+                成为疫苗临床试验志愿者之前，靳官萍一直在从事接送医护、筹集搬运分发物资等志愿服务；结束隔离回家后，她重返志愿者岗位。
+                
+                
+                
+                与“封城”之初“做不完的事”相比，现在的志愿者工作轻松不少。武汉公交、地铁部分线路恢复，医护接送需求下降，一天下来靳官萍只需接送两三个人。
+                
+                
+                
+                “没有恢复到往日车水马龙的活力，但也不再冷清了。”看到武汉逐渐复苏，靳官萍心情五味杂陈，“终于等到这一天，太不容易了。”
+                
+                
+                
+                隔离期间，27岁大学生朱傲冰曾录制数条视频推介湖北美食。“油焖大虾，吃辣女孩的必备，好吃到爆炸；红烧武昌鱼，鲜嫩可口；排骨藕汤，耐人寻味的汤品，佛跳墙在它面前都逊色……”他自编自写的推介词圈粉无数。
+                
+                
+                
+                朱傲冰表示，受疫情影响，湖北部分农产品出现滞销，他希望通过自己的努力，为农产品销售贡献一份力量。
+                
+                
+                </div>
+                <div class="news">4月3日是朱傲冰结束隔离回家的第一天，他走进超市，通过视频日志向网友展示武汉市民的日常生活。“我现在身体状态很好。”他说，接下来将拍摄更多视频，推介美景、美食，让大家看到越变越好的武汉。</div>
+            </div>
+           </div>
+        </div>
+        <!---回到顶部--->
+        <div class="tangle"><a href="javascript:;">回到顶部</a></div>
+        
+        <footer>
+            <div class="container">
+            <dl class="col-lg-3 col-xs-4">
+               <dt>联系我</dt>
+               <dd><img src="图片/qq.png" alt="">1016002920</dd>
+               <dd><img src="图片/locate.png" alt="">广东省四会市观海路</dd>
+               <dd><img src="图片/email.png" alt="">1016002920@qq.com</dd>
+               <dd><i class="fa fa-comments-o" ></i>r1016002920</dd>
+            </dl>
+            <dl class="col-lg-3 col-xs-2">
+                <dt>关于</dt>
+                <dd>主题引入</dd>
+                <dd>防疫知识</dd>
+                <dd>战疫英雄</dd>
+                <dd>战疫生活</dd>
+                <dd>个人感想</dd>
+            </dl>
+            <dl class="col-lg-3 col-xs-2">
+                 <dt>使用技术</dt>
+                 <dd>HTML、HTML5</dd>
+                 <dd>CSS、CSS3</dd>
+                 <dd>Javascript</dd>
+                 <dd>bootstrap</dd>
+            </dl>
+             <dl class="col-lg-3 col-xs-4">
+                 <dt>更多</dt>
+                 <dd>工作时间：</dd>
+                 <dd>周一到周五晚</dd>
+                 <dd>周日全天</dd>
+                 <dd class="img"><img src="图片/公众号.jpg" alt=""></dd>
+                 <span>官方公众号 获取更多资讯</span>
+             </dl>
+          </div>
+          <hr>
+          <p class="copyright"><i class="fa fa-copyright">2020 201908764301吴蕊 版权所有</i></p>
+          <a href="" class="totop">刷新页面</a>
+        </footer>
+         
+    
+
+</body>
+
+
+<script>
+    var masks=document.querySelectorAll('masks')
+    var pills=document.querySelectorAll('pills');
+    for(let i=0; i < pills.length;i++){
+        pills[i].addEventListener('mouseenter',function(){
+            
+        })
+    }
+</script>
+</html>

@@ -1,0 +1,84 @@
+.top{
+    height:88px;
+    background-color:#e4edf2;
+}
+
+
+
+.time{
+    font-size:24px;
+    display:none;
+    margin-top:20px;
+}
+.pic{   
+    text-align:center;
+    font-family: "Economica",sans-serif!important;
+    position:relative;
+}
+.game{
+    background-color:#e4edf2;
+   
+}
+
+.pic .virus{
+    position:relative;
+    width:400px;
+    border-radius:50%;
+    animation:rotate 5s forwards linear infinite;
+}
+@keyframes rotate{
+    from{
+    }
+    to{
+      transform:rotate(360deg);
+    }
+}
+
+
+
+.fa-volume-up,.fa-volume-down{
+    position:absolute;
+    top:20%;
+    z-index:2;
+    font-size:28px!important;
+    color:rgb(102, 111, 235);
+}
+.fa-volume-up:hover,.fa-volume-down:hover{
+    color:black;
+}
+
+
+.for{
+    font-size:24px;
+}
+.for span{
+    color:rgb(102, 111, 235);
+}
+.head{
+    font-size:26px;
+}
+button{
+    width: 140px;
+    height: 40px;
+    font-size:24px;
+    background-color:rgb(126, 134, 245);
+    color:white;
+    border-radius:10px;
+    border:none;
+    outline:none;
+    margin-bottom:10px!important;
+}
+.shower{
+    font-size:24px;
+    text-align:center;
+    display:none;
+}
+.again{
+    display:none;
+    position:relative;
+    left:50%;
+    transform:translateX(-70px);
+}
+.shower span{
+    color:rgb(102, 111, 235);
+}

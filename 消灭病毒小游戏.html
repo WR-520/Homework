@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS文件夹/reset.css">
+    <link rel="stylesheet" href="boo/css/bootstrap.css">
+    <link rel="stylesheet" href="CSS文件夹/解压小游戏.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="shortcut icon" href="图片/bitbug_favicon (3).ico">
+    <link rel="stylesheet" href="CSS文件夹/模块化开发.css">
+    <script src = "疫情主题页面脚本/jquery.min.js"></script>
+     <script src = "疫情主题页面脚本/导航栏.js"></script>
+    <title>解压小游戏</title>
+</head>
+<body>
+    <div id="top"></div>
+    <div class="share" id="share"><!--分享-->
+        <img src="图片/Facebook.png" alt=""> 
+        <img src="图片/tuite1.png" alt="">
+        <img src="图片/instagram.png" alt="">
+        <span>
+            分享到
+        </span> 
+    </div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <header class="container"><!--头部-->
+            <div class="naver">  
+                <div class="container-fluid">
+               <ul id="naver">
+                 <!-------------下拉菜单盒子--------------->
+             <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn">
+                    <a href="抗疫首页.html" >首页
+                        <i class="fa fa-angle-down x"></i>
+                    </a>
+               
+                    <!------------下拉菜单内容---------->
+                    <ul class="dropdown-content">
+                        <li><a href="国内疫情.html">国内疫情</a></li>
+                        <li><a href="海外疫情.html">海外疫情</a></li>
+                    </ul>
+                </li>
+             </div>
+              
+             <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn"><a href="防疫知识.html" >防疫知识
+                    <i class="fa fa-angle-down x"></i>
+                </a>
+                   <ul class="dropdown-content">
+                        <li><a href="热门问答.html">热门问答</a></li>
+                        <li><a href="谣言别传.html">谣言别传</a></li>
+                        <li><a href="战疫解药.html">战疫解药</a></li>
+                   </ul>
+                </li>
+             </div>
+
+            <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn"><a href="战疫英雄.html">战疫英雄<i class="fa fa-angle-down x"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="英雄风貌.html">
+                            英雄风貌
+                        </a></li>
+                    </ul>
+                </li>
+            </div>  
+
+             <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn"><a href="战疫生活.html">战疫生活<i class="fa fa-angle-down x"></i></a>
+                   <ul class="dropdown-content">
+                       <li>
+                           <a href="市民生活.html">市民生活</a>
+                       </li>
+                   </ul>
+                </li>  
+             </div>
+
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4"><a href="个人感想.html">个人感想</a></li>
+       
+            <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn"><a href="更多.html" class="active">更多<i class="fa fa-angle-down x"></i></a>
+                   <ul class="dropdown-content">
+                       <li>
+                           <a href="消灭病毒小游戏.html" class="active" >消灭病毒小游戏</a>
+                       </li>
+                       <li>
+                        <a href="贪吃蛇小游戏.html">贪吃蛇小游戏</a>
+                      </li>
+                      <li>
+                        <a href="购物车.html">购物车</a>
+                     </li>
+                   </ul>
+                </li>
+            </div>
+
+               </ul>
+                </div>
+            </div> 
+        </header>
+        </nav>
+
+
+        <div class="tangle"><a href="javascript:;">回到顶部</a></div>
+        <audio src="视频和音乐/游戏配乐.mp3" autoplay  ></audio>
+        
+        <!--游戏开场白-->  
+      <div class="container game">
+        <i class="fa fa-volume-up"></i>
+        <div class="top"></div>
+        <div class="pic">
+            
+            <p class="time">00:20:00</p>
+            <img class="virus" src="图片/病毒.png" alt="">
+        <div class="play">
+        <p class="head">
+            亲手[收拾]新冠病毒
+        </p>
+        <br>
+        <p class="for">
+            在<span> 20 </span>秒内<br>快速击败病毒
+        </p>
+        <br>
+        <button class="start">开始挑战</button>
+     </div>
+
+     </div>
+     <div class="shower">
+         <p>任意点击屏幕</p>
+         <p>快速击败它</p>
+         <button class="again">再来一次</button>
+     </div>
+     <!----->
+   </div>
+   <footer style="margin-top:2px;">
+    <div class="container">
+    <dl class="col-lg-3 col-xs-4">
+       <dt>联系我</dt>
+                  <dd><img src="图片/qq.png" alt="">1016002920</dd>
+                  <dd><img src="图片/locate.png" alt="">广东省四会市观海路</dd>
+                  <dd><img src="图片/email.png" alt="">1016002920@qq.com</dd>
+                  <dd><i class="fa fa-comments-o" ></i>r1016002920</dd>
+    </dl>
+    <dl class="col-lg-3 col-xs-2">
+        <dt>关于</dt>
+        <dd>主题引入</dd>
+        <dd>防疫知识</dd>
+        <dd>战疫英雄</dd>
+        <dd>战疫生活</dd>
+        <dd>个人感想</dd>
+    </dl>
+    <dl class="col-lg-3 col-xs-2">
+         <dt>使用技术</dt>
+         <dd>HTML、HTML5</dd>
+         <dd>CSS、CSS3</dd>
+         <dd>Javascript</dd>
+         <dd>bootstrap</dd>
+    </dl>
+     <dl class="col-lg-3 col-xs-4">
+         <dt>更多</dt>
+         <dd>工作时间：</dd>
+         <dd>周一到周五晚</dd>
+         <dd>周日全天</dd>
+         <dd class="img"><img src="图片/公众号.jpg" alt=""></dd>
+         <span>官方公众号 获取更多资讯</span>
+     </dl>
+  </div>
+  <hr>
+  <p class="copyright"><i class="fa fa-copyright">2020 201908764301吴蕊 版权所有</i></p>
+  <a href="" class="totop">刷新页面</a>
+</footer>
+<div id="footer"></div>
+</body>
+<script>
+    var btn=document.querySelector('.start');
+    var btn1=document.querySelector('.again');
+    var voice=document.querySelector('.fa-volume-up');
+    var play=document.querySelector('.play');
+    var show=document.querySelector('.shower');
+    var img=document.querySelector('.virus');
+    var time=document.querySelector('.time');
+    var timer=null;
+    var seconds=20;
+    
+   function change(seconds){
+       if(seconds>=10){
+            return seconds;
+       }
+       else{
+           return '0'+seconds;
+       }
+   }
+
+  var number=0;  
+  function game(){
+    timer=setInterval(function(){
+      seconds--;
+      time.innerHTML='00:'+change(seconds)+':00';
+      if(seconds==0){
+          clearInterval(timer);
+          if(number==0){
+            btn1.style.display='block';
+
+           show.innerHTML='很遗憾，你没有击败病毒';
+           show.appendChild(btn1);
+           
+          }
+          else{
+          show.innerHTML='太棒了！<br>你击败病毒<span>'+number+'</span>次';
+          btn1.style.display='block';
+          show.appendChild(btn1);
+        } 
+      }
+    },1000);
+        
+  }
+
+   console.log(show);
+    btn.addEventListener('click',function(){
+        play.style.display='none';
+        show.style.display='block';
+        time.style.display='block'; 
+        
+        game();
+       
+    })
+   
+   img.addEventListener('mousedown',function(){
+       number++;img.style.cursor='pointer';
+   })
+   img.addEventListener('mouseup',function(){
+       img.style.cursor='default';
+   }) 
+   btn1.addEventListener('click',function(){
+       show.innerHTML='任意点击病毒<br>快速击败它';
+       seconds=20;
+       number=0;
+       game();
+       
+   }) 
+    
+   var audio=document.querySelector('audio');
+   var flag=true;
+
+   function control(){
+      if(flag){
+          voice.className='fa fa-volume-up';
+          audio.play();
+           flag=false;
+
+      }
+      
+      else if(!flag){
+          voice.className='fa fa-volume-down';
+          flag=true;
+          audio.pause();
+      }
+   }
+   voice.addEventListener('click',function(){
+       control();
+   })
+  
+
+</script>
+</html>

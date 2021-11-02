@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="CSS文件夹/reset.css">
+    <link rel="stylesheet" href="boo/css/bootstrap.css">
+    <link rel="stylesheet" href="CSS文件夹/模块化开发.css">  
+    <script src ="疫情主题页面脚本/jquery.min.js"></script>
+    <script src = "疫情主题页面脚本/导航栏.js"></script>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="shortcut icon" href="图片/bitbug_favicon (3).ico">
+    
+    <style>
+         .topic1{
+             text-align: center;
+             animation:out .7s forwards;
+    } 
+   .main{
+       margin-top:50px;
+   }
+  .artical p{
+     position:relative;
+     font-size:20px;
+     text-align:center;
+     line-height:50px;
+     animation-delay: 2s;
+     animation:jump 1.5s ease-in-out;
+   }
+  
+        .lunbo img{
+            height:400px;
+            width: 600px;
+            position:relative; 
+            animation:all 0.5s;
+        }
+        .lunbo img:hover{
+           -webkit-transform:scale(1.2,1.2);
+           transform:scale(1.03,1.03);
+        }
+        
+
+        .links{
+           width:130px;
+           position:absolute;
+           bottom:8px;
+           right:5px;
+        }
+        .links a{
+            display:inline-block;
+            width:20px;
+            height:26px;
+            font-size:14px;
+            line-height:26px;
+            text-align:center;
+        }
+        .normal{
+            color:rgb(247, 245, 245);
+            background-color: #00000040;
+        }
+        .current{
+            color:rgb(0, 0, 0);
+            background-color:rgb(144, 210, 221);
+        }  
+      
+        @media screen and (max-width:1000px){
+            .topic1{
+                margin-top:160px!important;
+            }
+        }   
+
+    </style>
+     <script>
+       var now=1;//从第一幅图开始
+        function lunbo(){
+            if(arguments.length!=0)
+            {
+                now=arguments[0];
+                window.clearTimeout(timer);
+            }
+           for(var i=1;i<=3;i++)
+           { if(i==now)
+               {
+                   document.getElementById("img"+i).style.display='block';
+                   document.getElementById("link"+i).className="current";
+               }
+               else
+               {   
+                    document.getElementById("img"+i).style.display="none";
+                    document.getElementById("link"+i).className="normal";
+               }
+           }
+           if(now==3) now=1;
+           else now++;
+           timer=window.setTimeout('lunbo()',3500);
+        };
+
+         window.onload=function(){
+            lunbo();
+           
+        };
+  
+     </script>
+    
+</head>
+
+<body >
+    <div id="top"></div>
+    <div class="share" id="share"><!--分享-->
+        <a href="javascript:window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(document.location.href)+'&t='+encodeURIComponent(document.title),'_blank','toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes');void(0)"><img src="图片/Facebook.png" alt=""></a>
+        <a href="javascript:window.open('http://twitter.com/home?status='+encodeURIComponent(document.location.href)+' '+encodeURIComponent(document.title),'_blank','toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes');void(0)"><img src="图片/tuite1.png" alt=""></a>
+        <img src="图片/instagram.png" alt="">
+        <span>
+            分享到
+        </span> 
+    </div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <header class="container"><!--头部-->
+            <div class="naver">  
+                <div class="container-fluid">
+               <ul id="naver">
+                 <!-------------下拉菜单盒子--------------->
+             <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn">
+                    <a href="抗疫首页.html" class="active">首页
+                        <i class="fa fa-angle-down x"></i>
+                    </a>
+               
+                    <!------------下拉菜单内容---------->
+                    <ul class="dropdown-content">
+                        <li><a href="国内疫情.html">国内疫情</a></li>
+                        <li><a href="海外疫情.html">海外疫情</a></li>
+                    </ul>
+                </li>
+             </div>
+              
+             <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn"><a href="防疫知识.html" >防疫知识
+                    <i class="fa fa-angle-down x"></i>
+                </a>
+                   <ul class="dropdown-content">
+                        <li><a href="热门问答.html">热门问答</a></li>
+                        <li><a href="谣言别传.html">谣言别传</a></li>
+                        <li><a href="战疫解药.html">战疫解药</a></li>
+                   </ul>
+                </li>
+             </div>
+
+            <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn"><a href="战疫英雄.html">战疫英雄<i class="fa fa-angle-down x"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="英雄风貌.html">
+                            英雄风貌
+                        </a></li>
+                    </ul>
+                </li>
+            </div>  
+
+             <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn"><a href="战疫生活.html">战疫生活<i class="fa fa-angle-down x"></i></a>
+                   <ul class="dropdown-content">
+                       <li>
+                           <a href="市民生活.html">市民生活</a>
+                       </li>
+                   </ul>
+                </li>  
+             </div>
+
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4"><a href="个人感想.html">个人感想</a></li>
+       
+            <div class="dropdown">
+                <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 dropbtn"><a href="更多.html" >更多<i class="fa fa-angle-down x"></i></a>
+                   <ul class="dropdown-content">
+                       <li>
+                           <a href="消灭病毒小游戏.html" >消灭病毒小游戏</a>
+                       </li>
+                       <li>
+                        <a href="贪吃蛇小游戏.html">贪吃蛇小游戏</a>
+                      </li>
+                      <li>
+                        <a href="购物车.html">购物车</a>
+                     </li>
+                   </ul>
+                </li>
+            </div>
+
+               </ul>
+                </div>
+            </div> 
+        </header>
+        </nav>
+        
+        <div class="tangle"><a href="javascript:;">回到顶部</a></div>
+        <div class="datanum">
+        <h1 class="topic1">患难见真情 共同抗疫情</h1>
+       </div>
+        <!-- <h1 class="row topic1"></h1> -->
+    <div class="container main">
+        <div class="row lunbo"><!--轮播图-->
+                 
+                <div class="col-lg-6 contain">
+                     <a href="" class="thumbnail">
+                     <img src="图片/img1.jpg" id="img1" class="img-fluid rounded" alt="" style="display:none">
+                     </a>
+                     <img src="图片/img2.jpg" id="img2" class="img-fluid rounded" alt="" style="display:none">
+                     <img src="图片/img3.jpg" id="img3" class="img-fluid rounded" alt="" style="display:none">
+                     <div class="links">
+                     <a href="javascript:lunbo(1);" class="current" id="link1">1</a>
+                     <a href="javascript:lunbo(2);" class="normal" id="link2">2</a>
+                     <a href="javascript:lunbo(3);" class="normal" id="link3">3</a>
+                    </div>   
+                </div> 
+            
+                
+                <div class="col-lg-6 artical" id="artical">
+                    
+                    <p>这个春节，一场突如其来的疫情防控狙击战在中华大地骤然打响。</p>
+                    <p>新型冠状病毒感染的肺炎肆虐，严重威胁广大群众的生命健康安全。</p>
+                    <p>疫情牵动着我们每一个人的心。</p>
+                    <p>这是一场没有硝烟的战争。</p>
+                    <p>疫情就是命令，防控就是责任。</p>
+                    <p>中华儿女从不畏惧困难，从不退缩。</p>
+                    <p>我们坚信这场战争我们肯定能赢，也必须要赢。</p>
+                    <p>现在，让我们来了解一下吧!</p>
+                </div>  
+        </div>
+     
+    </div>
+          <footer>
+              <div class="container">
+              <div class="row">
+              <dl class="col-lg-3 col-xs-4">
+                 <dt>联系我</dt>
+                  <dd><img src="图片/qq.png" alt="">1016002920</dd>
+                  <dd><img src="图片/locate.png" alt="">广东省四会市观海路</dd>
+                  <dd><img src="图片/email.png" alt="">1016002920@qq.com</dd>
+                  <dd><i class="fa fa-comments-o" ></i>r1016002920</dd>
+              </dl>
+              <dl class="col-lg-3 col-xs-2">
+                  <dt>关于</dt>
+                  <dd>主题引入</dd>
+                  <dd>防疫知识</dd>
+                  <dd>战疫英雄</dd>
+                  <dd>战疫生活</dd>
+                  <dd>个人感想</dd>
+              </dl>
+              <dl class="col-lg-3 col-xs-2">
+                   <dt>使用技术/框架</dt>
+                   <dd>HTML、HTML5</dd>
+                   <dd>CSS、CSS3</dd>
+                   <dd>Javascript</dd>
+                   <dd>Juqery</dd>
+                   <dd>Vue</dd>
+                   <dd>Bootstrap</dd>
+              </dl>
+               <dl class="col-lg-3 col-xs-4">
+                   <dt>更多</dt>
+                   <dd>工作时间：</dd>
+                   <dd>周一到周五晚</dd>
+                   <dd>周日全天</dd>
+                   <dd class="img"><img src="图片/公众号.jpg" alt=""></dd>
+                   <span>官方公众号 获取更多资讯</span>
+               </dl>
+            </div>
+            <hr>
+            <p class="copyright"><i class="fa fa-copyright">2020 201908764301吴蕊 版权所有</i></p>
+            </div>
+            <a href="" class="totop">刷新页面</a>
+          </footer>
+          <div id="footer"></div>
+</body>
+<script src="疫情主题页面脚本/导航栏.js"></script>
+</html>

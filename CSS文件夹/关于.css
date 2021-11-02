@@ -1,0 +1,89 @@
+#search2 a{
+    text-align:center;
+    line-height:40px ;
+    display:inline-block;
+    height:40px;
+    width:100px;
+    font-size:18px;
+    color:white;
+    background-color:rgba(0,0,0,0.7);
+   
+} 
+body{
+    
+    background-repeat:no-repeat;
+    background-size:cover;
+    overflow:hidden;
+}
+.sp{
+    border-right:none!important;
+}
+
+#search2{
+    margin-top:200px;
+    margin-left:50%;
+    transform:translateX(-200px);
+    display:inline-block;
+
+}
+.gets{
+
+    display:inline-block;
+    margin-left:50%;
+    transform:translateX(-234px);
+}
+.gets input
+{   height:36px;
+    float:left;
+    background-color:rgba(0,0,0,0.7);
+    color:white;
+    padding:10px!important;
+}
+.inputer{
+   width: 450px;
+   border:none;
+   margin:0 auto;
+}
+.enter{
+    width: 78px;
+    border-radius:4px;
+    border:none;
+    text-align:center;
+}
+.btn_color{
+    background-color: rgba(255, 255, 255, .6)!important;
+    color: black!important;
+}
+.img-container{
+    height:200px;
+    background-color:rgba(0,0,0,0.7);
+    overflow:auto;
+    position:relative;
+    right:-1500px;
+    top:100px;
+  
+}
+.img-container img{
+    width: 393.9px;
+    height:220px;
+}
+
+.change_skin,
+.change_yourself{
+ position:absolute;
+ bottom:0;
+ background-color:rgba(0,0,0,0.7);
+ color:white;
+ border:none;
+ height:30px;
+ width:100px;
+ outline:none;
+}
+.change_skin:hover,
+.change_yourself:hover{
+    background-color:white;
+    color:black;
+}
+.change_yourself{
+ right:0;
+}
